@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 142 50% 98%;
+    --foreground: 142 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 142 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 142 10% 15%;
+
+    --primary: 142 76% 36%;
+    --primary-foreground: 355.7 100% 97.3%;
+
+    --secondary: 142 30% 96%;
+    --secondary-foreground: 142 10% 15%;
+
+    --muted: 142 20% 96%;
+    --muted-foreground: 142 5% 45%;
+
+    --accent: 142 30% 96%;
+    --accent-foreground: 142 10% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 142 20% 90%;
+    --input: 142 20% 90%;
+    --ring: 142 76% 36%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 142 50% 5%;
+    --foreground: 142 10% 95%;
+
+    --card: 142 50% 5%;
+    --card-foreground: 142 10% 95%;
+
+    --popover: 142 50% 5%;
+    --popover-foreground: 142 10% 95%;
+
+    --primary: 142 76% 36%;
+    --primary-foreground: 355.7 100% 97.3%;
+
+    --secondary: 142 30% 15%;
+    --secondary-foreground: 142 10% 95%;
+
+    --muted: 142 30% 15%;
+    --muted-foreground: 142 5% 65%;
+
+    --accent: 142 30% 15%;
+    --accent-foreground: 142 10% 95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 142 30% 15%;
+    --input: 142 30% 15%;
+    --ring: 142 76% 36%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+input.uppercase::placeholder {
+  text-transform: none;
+}
+
+/* Estilos modernos para la aplicación */
+.gradient-green {
+  @apply bg-gradient-to-r from-caravalia-600 to-caravalia-500;
+}
+
+.card-modern {
+  @apply bg-white rounded-xl shadow-card border border-caravalia-100;
+}
+
+.btn-primary-modern {
+  @apply bg-gradient-to-r from-caravalia-600 to-caravalia-500 hover:from-caravalia-700 hover:to-caravalia-600 text-white font-medium shadow-md hover:shadow-lg transition-all duration-200;
+}
+
+.btn-outline-modern {
+  @apply bg-white border border-caravalia-200 text-caravalia-700 hover:bg-caravalia-50 font-medium shadow-sm hover:shadow-md transition-all duration-200;
+}
+
+.header-circle {
+  @apply w-12 h-12 rounded-full gradient-green text-white flex items-center justify-center font-bold shadow-md;
+}
+
+.section-title {
+  @apply text-lg font-semibold text-caravalia-800 mb-3;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .print:hidden {
+    display: none !important;
+  }
+}
+
